@@ -1,267 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>雲頂天宮 · 机器人总控看板</title>
-  <meta name="description" content="雲頂天宮 - 多渠道机器人智能总控台与矩阵分发调度中心，无缝连接 Telegram、微信、Discord 及网站客服。">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="pragma" content="no-cache"/>
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="expires" content="0"/>
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="/favicon.ico">
+  <title>雲頂天宮</title>
+  <script>
+    // 同步初始化 localStorage，确保路由立即可用
+    try {
+      var initialMenus = [{"id": 13, "name": "对 话", "pid": 0, "route": "", "icon": "bx-message-rounded-dots", "status": 1, "status_exclusive": 1, "created_at": "2023-06-03T01:16:03.000000Z", "updated_at": "2024-02-22T08:15:13.000000Z", "sort": 98, "params": "", "description": "", "auth_company": "", "electric_power": "1.00", "group": 0, "_child": [{"id": 14, "name": "大模型对话", "pid": 13, "route": "robot.create_ai_chat", "icon": "bx-message-rounded-dots", "status": 1, "status_exclusive": 1, "created_at": "2023-06-03T01:16:03.000000Z", "updated_at": "2024-04-01T09:32:35.000000Z", "sort": 99, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 10, "name": "我的机器人", "pid": 13, "route": "robot.train_database", "icon": "bx-user-pin", "status": 1, "status_exclusive": 1, "created_at": "2023-05-29T01:15:49.000000Z", "updated_at": "2024-04-01T09:32:46.000000Z", "sort": 88, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 70, "name": "机器人市场", "pid": 13, "route": "robot.robot_list", "icon": "bx-file", "status": 1, "status_exclusive": 0, "created_at": "2024-02-22T09:38:18.000000Z", "updated_at": "2024-04-01T09:32:54.000000Z", "sort": 77, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}]}, {"id": 28, "name": "创 作", "pid": 0, "route": "", "icon": "bx-detail", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T03:04:55.000000Z", "updated_at": "2024-04-01T13:42:09.000000Z", "sort": 95, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": [{"id": 29, "name": "网站文案", "pid": 28, "route": "copywriting.create_independent_station", "icon": "bx-devices", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T03:05:40.000000Z", "updated_at": "2024-04-01T09:33:33.000000Z", "sort": 99, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 68, "name": "品牌营销", "pid": 28, "route": "copywriting.create_branding", "icon": "bx-planet", "status": 1, "status_exclusive": 0, "created_at": "2024-02-22T08:17:51.000000Z", "updated_at": "2024-04-01T09:33:43.000000Z", "sort": 97, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 74, "name": "企业应用", "pid": 28, "route": "copywriting.create_enterprise_app", "icon": "bx-briefcase", "status": 1, "status_exclusive": 0, "created_at": "2024-02-26T07:49:59.000000Z", "updated_at": "2024-04-01T09:34:10.000000Z", "sort": 95, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 69, "name": "视频助手", "pid": 28, "route": "copywriting.create_video_assistant", "icon": "bx-video-recording", "status": 1, "status_exclusive": 0, "created_at": "2024-02-22T08:19:01.000000Z", "updated_at": "2024-04-01T09:34:18.000000Z", "sort": 90, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 30, "name": "海外电商", "pid": 28, "route": "copywriting.create_e_commerce", "icon": "bx-planet", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T03:06:05.000000Z", "updated_at": "2024-04-01T09:34:27.000000Z", "sort": 88, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 31, "name": "海外社媒", "pid": 28, "route": "copywriting.create_social", "icon": "bx-edit", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T03:06:21.000000Z", "updated_at": "2024-04-01T09:34:34.000000Z", "sort": 77, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 72, "name": "国内电商", "pid": 28, "route": "copywriting.create_d_e_commerce", "icon": "bx-planet", "status": 1, "status_exclusive": 0, "created_at": "2024-02-26T07:46:53.000000Z", "updated_at": "2024-04-01T09:34:42.000000Z", "sort": 44, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 71, "name": "国内社媒", "pid": 28, "route": "copywriting.create_d_social_media", "icon": "bx-edit", "status": 1, "status_exclusive": 0, "created_at": "2024-02-26T07:46:35.000000Z", "updated_at": "2024-05-30T05:57:48.000000Z", "sort": 33, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 73, "name": "邮件助手", "pid": 28, "route": "copywriting.create_email_assistant", "icon": "bx-envelope", "status": 1, "status_exclusive": 0, "created_at": "2024-02-26T07:49:38.000000Z", "updated_at": "2024-04-01T09:34:50.000000Z", "sort": 0, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 25, "name": "文生图", "pid": 28, "route": "draw.draw_text", "icon": "bx-images", "status": 1, "status_exclusive": 1, "created_at": "2023-07-11T12:07:55.000000Z", "updated_at": "2024-04-01T13:40:47.000000Z", "sort": 5, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 2, "_child": []}, {"id": 26, "name": "图生图", "pid": 28, "route": "draw.draw_img", "icon": "bx-images", "status": 1, "status_exclusive": 1, "created_at": "2023-07-18T08:10:11.000000Z", "updated_at": "2024-04-01T13:41:01.000000Z", "sort": 2, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 2, "_child": []}, {"id": 24, "name": "图片列表", "pid": 28, "route": "draw.draw_list", "icon": "bx-images", "status": 1, "status_exclusive": 1, "created_at": "2023-07-11T12:02:36.000000Z", "updated_at": "2024-04-01T13:41:11.000000Z", "sort": 0, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 2, "_child": []}]}, {"id": 2, "name": "应 用", "pid": 0, "route": "", "icon": "bxl-whatsapp", "status": 1, "status_exclusive": 1, "created_at": "2023-05-29T01:15:04.000000Z", "updated_at": "2024-02-22T08:15:37.000000Z", "sort": 90, "params": "", "description": "", "auth_company": "", "electric_power": "2.00", "group": 0, "_child": [{"id": 12, "name": "应用市场", "pid": 2, "route": "dialogue.apps", "icon": "bx-briefcase", "status": 1, "status_exclusive": 1, "created_at": "2023-05-31T02:58:35.000000Z", "updated_at": "2024-04-01T09:33:05.000000Z", "sort": 99, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 18, "name": "所有会话", "pid": 2, "route": "dialogue_talk_all", "icon": "bx-user-pin", "status": 1, "status_exclusive": 1, "created_at": "2023-06-08T09:12:09.000000Z", "updated_at": "2024-03-01T01:19:06.000000Z", "sort": 95, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": "2440138", "name": "网页客服", "pid": 2, "route": "https://hub.ai.cc/app/892", "icon": "icon-talk", "status": 1, "params": "", "description": "", "other_id": 8, "_child": []}, {"id": "2476380", "name": "弹窗客服", "pid": 2, "route": "https://hub.ai.cc/app/1233", "icon": "icon-talk", "status": 1, "params": "", "description": "", "other_id": 9, "_child": []}]}, {"id": 16, "name": "客 户", "pid": 0, "route": "", "icon": "bx-user-pin", "status": 1, "status_exclusive": 1, "created_at": "2023-06-08T02:29:30.000000Z", "updated_at": "2024-04-01T13:39:55.000000Z", "sort": 77, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": [{"id": 20, "name": "会话客户", "pid": 16, "route": "customer.customer_list", "icon": "bx-user-pin", "status": 1, "status_exclusive": 1, "created_at": "2023-06-13T03:30:34.000000Z", "updated_at": "2024-04-07T03:19:16.000000Z", "sort": 80, "params": "", "description": "", "auth_company": "", "electric_power": "13.00", "group": 0, "_child": []}, {"id": 19, "name": "标签管理", "pid": 16, "route": "customer.customer_label_management", "icon": "bx-pin", "status": 1, "status_exclusive": 1, "created_at": "2023-06-09T07:23:05.000000Z", "updated_at": "2024-04-02T10:13:10.000000Z", "sort": 66, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 83, "name": "自定义字段", "pid": 16, "route": "customer.customer_custom_fields", "icon": "bx-detail", "status": 1, "status_exclusive": 0, "created_at": "2024-04-16T05:38:52.000000Z", "updated_at": "2024-04-16T10:58:01.000000Z", "sort": 65, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 53, "name": "AI用户画像", "pid": 16, "route": "customer.customer_user_portrait", "icon": "bx-pin", "status": 1, "status_exclusive": 0, "created_at": "2023-09-22T10:14:19.000000Z", "updated_at": "2024-04-16T10:57:40.000000Z", "sort": 64, "params": "", "description": "", "auth_company": "", "electric_power": "1.00", "group": 0, "_child": []}]}, {"id": 75, "name": "数 据", "pid": 0, "route": "", "icon": "bx-planet", "status": 1, "status_exclusive": 0, "created_at": "2024-03-07T08:21:38.000000Z", "updated_at": "2024-03-10T07:48:43.000000Z", "sort": 44, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": [{"id": 76, "name": "AI 搜 索", "pid": 75, "route": "data.search", "icon": "bx-search-alt", "status": 1, "status_exclusive": 0, "created_at": "2024-03-07T08:22:14.000000Z", "updated_at": "2024-04-01T13:48:03.000000Z", "sort": 98, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 80, "name": "YouTube数据", "pid": 75, "route": "data.YouTube", "icon": "bxl-youtube", "status": 1, "status_exclusive": 0, "created_at": "2024-03-25T06:47:24.000000Z", "updated_at": "2024-04-01T13:48:52.000000Z", "sort": 0, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 1, "_child": []}, {"id": 81, "name": "视频数据总览", "pid": 75, "route": "data.data_all", "icon": "bx-detail", "status": 1, "status_exclusive": 0, "created_at": "2024-03-26T07:52:38.000000Z", "updated_at": "2024-04-02T01:36:04.000000Z", "sort": 0, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 2, "_child": []}]}, {"id": 77, "name": "自 动", "pid": 0, "route": "", "icon": "bx-transfer-alt", "status": 1, "status_exclusive": 0, "created_at": "2024-03-20T01:48:27.000000Z", "updated_at": "2024-04-01T13:54:18.000000Z", "sort": 33, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": [{"id": 78, "name": "自动化市场", "pid": 77, "route": "automation.auto_install", "icon": "bx-briefcase", "status": 1, "status_exclusive": 0, "created_at": "2024-03-20T01:48:46.000000Z", "updated_at": "2024-04-01T09:36:44.000000Z", "sort": 99, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 79, "name": "微信自动化", "pid": 77, "route": "automation.auto_weChat", "icon": "bxl-whatsapp", "status": 1, "status_exclusive": 0, "created_at": "2024-03-20T01:49:25.000000Z", "updated_at": "2024-04-07T05:53:26.000000Z", "sort": 0, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 84, "name": "AI混剪视频", "pid": 77, "route": "automation.mix_video", "icon": "bxl-youtube", "status": 1, "status_exclusive": 0, "created_at": "2024-05-23T08:52:59.000000Z", "updated_at": "2024-05-25T14:17:13.000000Z", "sort": 0, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}]}, {"id": 34, "name": "工 具", "pid": 0, "route": "", "icon": "bx-box", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T09:22:34.000000Z", "updated_at": "2024-02-21T02:00:12.000000Z", "sort": 0, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": [{"id": 67, "name": "工具市场", "pid": 34, "route": "tool.tool_install", "icon": "bx-briefcase", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T09:25:20.000000Z", "updated_at": "2024-04-01T09:37:17.000000Z", "sort": 99, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 35, "name": "实时汇率", "pid": 34, "route": "tool.tool_exchange_rate", "icon": "bx-yen", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T09:23:19.000000Z", "updated_at": "2024-04-01T09:37:25.000000Z", "sort": 97, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 36, "name": "智能翻译", "pid": 34, "route": "tool.tool_translate", "icon": "bx-transfer-alt", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T09:23:51.000000Z", "updated_at": "2024-04-01T09:37:33.000000Z", "sort": 95, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 37, "name": "去AI痕迹", "pid": 34, "route": "tool.tool_remove_ai_traces", "icon": "bx-eraser", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T09:24:24.000000Z", "updated_at": "2024-04-01T09:37:40.000000Z", "sort": 90, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 38, "name": "邮箱验证", "pid": 34, "route": "tool.tool_mailbox_verify", "icon": "bx-envelope", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T09:24:42.000000Z", "updated_at": "2024-04-01T09:37:48.000000Z", "sort": 85, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 39, "name": "电话验证", "pid": 34, "route": "tool.tool_mobile_verify", "icon": "bx-phone", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T09:24:57.000000Z", "updated_at": "2024-04-01T09:37:55.000000Z", "sort": 80, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 40, "name": "VAT查询", "pid": 34, "route": "tool.tool_vat", "icon": "bx-file-find", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T09:25:20.000000Z", "updated_at": "2024-04-01T09:38:03.000000Z", "sort": 75, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}, {"id": 44, "name": "查关键词", "pid": 34, "route": "tool.tool_keyword_expansion", "icon": "bx-search-alt", "status": 1, "status_exclusive": 1, "created_at": "2023-08-02T09:26:33.000000Z", "updated_at": "2024-04-01T09:38:36.000000Z", "sort": 55, "params": "", "description": "", "auth_company": "", "electric_power": "0.00", "group": 0, "_child": []}]}];
+      localStorage.setItem("menus_B", JSON.stringify(initialMenus));
+      localStorage.setItem("Token", "yunding_master_token_8888");
+      localStorage.setItem("userMsg", JSON.stringify({
+        "id": 88888,
+        "username": "雲頂天宮",
+        "phone": "18888888888",
+        "nickname": "雲頂天宮",
+        "avatar": "/img/logo-mark.eb61b43d.png",
+        "vip_level": "SVIP 终身至尊版",
+        "tokens": "999,999,999"
+      }));
+      sessionStorage.setItem("selID", JSON.stringify(initialMenus[2])); // 默认选中应用
+      localStorage.setItem("activePage", "应用市场");
+    } catch(e) {
+      console.error(e);
+    }
+  </script>
+  <script src="/config/webConfig.js"></script>
+  <script defer="defer" src="/js/chunk-vendors.1760932628381.js"></script>
+  <script defer="defer" src="/js/app.1760932628381.js"></script>
+  <link href="/css/app.251ba009.css" rel="stylesheet">
+  <link href="/css/2154.c714e0fa.css" rel="stylesheet">
+  <link href="/css/6681.fcc9a393.css" rel="stylesheet">
 </head>
 <body>
-  <div id="app-container">
-    <!-- 左侧主侧边栏 -->
-    <aside id="sidebar">
-      <div>
-        <div class="sidebar-header">
-          <img src="assets/logo.svg" alt="雲頂天宮 Logo" class="brand-logo">
-          <div class="brand-info">
-            <h1>雲頂天宮</h1>
-            <span class="brand-tag">DISPATCH MATRIX</span>
-          </div>
-        </div>
-
-        <ul class="nav-menu">
-          <li class="nav-item active" id="nav-bots" onclick="switchPage('bots')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="7" height="7"></rect>
-              <rect x="14" y="3" width="7" height="7"></rect>
-              <rect x="14" y="14" width="7" height="7"></rect>
-              <rect x="3" y="14" width="7" height="7"></rect>
-            </svg>
-            <span>机器人看板</span>
-            <span class="badge-count" id="stat-total-bots">4</span>
-          </li>
-          <li class="nav-item" id="nav-market" onclick="switchPage('market')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-            <span>应用通道 (23)</span>
-          </li>
-          <li class="nav-item" id="nav-chat" onclick="switchPage('chat')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-            <span>在线调试控制台</span>
-          </li>
-          <li class="nav-item" id="nav-widget" onclick="switchPage('widget')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-            <span>商城悬浮挂载</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- 侧边栏底部快捷链接 -->
-      <div class="sidebar-footer">
-        <a href="https://yun-ding.com/" target="_blank" rel="noreferrer" class="quick-link-btn" title="访问雲頂天宮官网">
-          <span>🌐 雲頂天宮官网</span>
-          <span>↗</span>
-        </a>
-        <a href="https://tg.yun-ding.com" target="_blank" rel="noreferrer" class="quick-link-btn" title="打开 TG 控制台">
-          <span>✈️ TG 控制台</span>
-          <span>↗</span>
-        </a>
-        <a href="http://18.176.182.71:5140/" target="_blank" rel="noreferrer" class="quick-link-btn" style="border-color: rgba(0, 197, 200, 0.3); color: var(--primary);" title="登录底层调度中枢">
-          <span>⚙️ 底层调度中枢</span>
-          <span>:5140</span>
-        </a>
-      </div>
-    </aside>
-
-    <!-- 右侧内容主视口 -->
-    <main id="main-view">
-      <!-- 顶部状态与操作栏 -->
-      <header id="top-bar">
-        <div class="view-title-group">
-          <h2>雲頂天宮</h2>
-          <p>高可用多模态智能机器人调度与分发中枢</p>
-        </div>
-
-        <div class="top-bar-actions">
-          <div class="metrics-pill">
-            <div class="metric-item">
-              <span class="pulse-dot"></span>
-              <span id="header-online-count">4 在线 / 共 4 个</span>
-            </div>
-            <div style="width: 1px; height: 16px; background: var(--border-color);"></div>
-            <div class="metric-item">
-              <span style="color: var(--text-muted);">调度主机:</span>
-              <span class="val">日本 AWS (18.176.182.71)</span>
-            </div>
-          </div>
-
-          <button class="btn-primary" onclick="openModal()">
-            <span>+</span>
-            <span>添加机器人</span>
-          </button>
-        </div>
-      </header>
-
-      <!-- 页面 1: 机器人看板 -->
-      <div class="page-container active" id="page-bots">
-        <!-- 统计指标卡片 -->
-        <div class="stats-banner">
-          <div class="stat-card">
-            <div class="label">运行中机器人</div>
-            <div class="number" id="stat-online-bots">4</div>
-            <div class="subtext">● 100% 节点在线运行</div>
-          </div>
-          <div class="stat-card">
-            <div class="label">今日调用总次数</div>
-            <div class="number">5,060</div>
-            <div class="subtext">↑ 18.4% 较昨日</div>
-          </div>
-          <div class="stat-card">
-            <div class="label">Token 累计消耗</div>
-            <div class="number">330.7K</div>
-            <div class="subtext">DeepSeek & Claude 混合算力</div>
-          </div>
-          <div class="stat-card">
-            <div class="label">平均响应延迟</div>
-            <div class="number" style="color: var(--accent-gold);">0.68s</div>
-            <div class="subtext">⚡ 极速流式传输</div>
-          </div>
-        </div>
-
-        <!-- 机器人卡片网格列表 -->
-        <div class="cards-grid" id="bots-grid-container">
-          <!-- 动态渲染 -->
-        </div>
-      </div>
-
-      <!-- 页面 2: 23 个应用市场通道 -->
-      <div class="page-container" id="page-market">
-        <div class="market-tabs">
-          <button class="market-tab active" data-cat="all">全部通道 (23)</button>
-          <button class="market-tab" data-cat="api">API 直连对接 (12)</button>
-          <button class="market-tab" data-cat="self">自主网页集成 (4)</button>
-          <button class="market-tab" data-cat="plugin">独立站插件 (4)</button>
-          <button class="market-tab" data-cat="rpa">手机 RPA 辅助 (3)</button>
-        </div>
-        <div class="market-grid" id="market-grid-container">
-          <!-- 动态渲染 -->
-        </div>
-      </div>
-
-      <!-- 页面 3: 在线调试控制台 -->
-      <div class="page-container" id="page-chat">
-        <div class="chat-studio-container">
-          <div class="chat-sidebar">
-            <div class="chat-list-header">选择调试机器人</div>
-            <ul class="chat-bot-list" id="chat-bot-list">
-              <!-- 动态列表 -->
-            </ul>
-          </div>
-          <div class="chat-main">
-            <div class="chat-header">
-              <div>
-                <h4 id="chat-active-title" style="color: #fff; font-size: 0.95rem;">雲頂天宮 · Telegram 主调度助手</h4>
-                <p id="chat-active-desc" style="font-size: 0.75rem; color: var(--text-muted);">Telegram · 引擎: DeepSeek-V3 / GPT-4o</p>
-              </div>
-              <div class="status-badge online">
-                <span class="pulse-dot"></span>
-                <span>连接畅通</span>
-              </div>
-            </div>
-            <div class="chat-messages" id="chat-messages-container">
-              <div class="msg-bubble msg-bot">
-                <b>雲頂天宮 调度中枢</b>: 您好！我是当前机器人的仿真测试通道。您可以输入任意消息以验证 Prompt 调优、知识库召回和模型响应效果。
-              </div>
-            </div>
-            <div class="chat-input-bar">
-              <input type="text" class="chat-input" id="chat-user-input" placeholder="输入测试对话内容，按回车直接发送...">
-              <button class="btn-primary" onclick="handleSendMessage()">发送</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 页面 4: 独立站悬浮挂载 -->
-      <div class="page-container" id="page-widget">
-        <div style="max-width: 900px;">
-          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">网站悬浮智能客服嵌入代码</h3>
-          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 24px;">
-            只需将以下脚本引入到 <code style="color: var(--primary);">yun-ding.com</code> 或任何独立站商城页面底部，即可立刻在网页右下角唤出带有「雲頂天宮」专属色系的高性能客服对话浮窗。
-          </p>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-gold);">HTML 引用代码</span>
-              <button class="btn-primary" style="padding: 6px 14px; font-size: 0.8rem;" onclick="copyWidgetCode()">一键复制代码</button>
-            </div>
-            <div class="code-snippet">&lt;script src="http://18.176.182.71:5140/widget.js" data-bot="yunding_master" async&gt;&lt;/script&gt;</div>
-          </div>
-
-          <div class="widget-preview-box">
-            <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 8px;">效果即时预览</h4>
-            <p style="color: var(--text-muted); font-size: 0.82rem;">
-              右下角已挂载真实可交互的雲頂天宮客服气泡，支持展开、折叠、多轮即时响应，样式自适应移动端与宽屏。
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <!-- 创建/接入机器人 模态窗 -->
-  <div class="modal-overlay" id="create-modal">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3 style="color: #fff; font-size: 1.15rem;">接入新机器人</h3>
-        <button class="btn-icon" onclick="closeModal()">✕</button>
-      </div>
-
-      <form id="form-create-bot" onsubmit="handleCreateBot(event)">
-        <div class="form-group">
-          <label class="form-label" for="input-bot-name">机器人名称</label>
-          <input type="text" id="input-bot-name" class="form-control" placeholder="例：雲頂天宮 · 海外售前顾问" required>
-        </div>
-
-        <div class="form-group" style="margin-top: 14px;">
-          <label class="form-label" for="select-platform">接入渠道类型</label>
-          <select id="select-platform" class="form-control">
-            <option value="telegram">Telegram (BotFather API)</option>
-            <option value="web">网站网页客服 (JavaScript SDK)</option>
-            <option value="wx">企业微信群 (Webhook)</option>
-            <option value="discord">Discord (Bot Token)</option>
-          </select>
-        </div>
-
-        <div class="form-group" style="margin-top: 14px;">
-          <label class="form-label" for="select-model">驱动 AI 模型</label>
-          <select id="select-model" class="form-control">
-            <option value="DeepSeek-V3">DeepSeek-V3 (推荐 / 超低延迟)</option>
-            <option value="Claude 3.5 Sonnet">Claude 3.5 Sonnet (高情商对话)</option>
-            <option value="GPT-4o">GPT-4o (全能旗舰)</option>
-            <option value="Mistral Large">Mistral Large (极客与多语言)</option>
-          </select>
-        </div>
-
-        <div class="form-group" style="margin-top: 14px;">
-          <label class="form-label" for="input-token">访问凭证 / Webhook 密钥</label>
-          <input type="text" id="input-token" class="form-control" placeholder="输入 Bot Token 或 Webhook 地址" required>
-        </div>
-
-        <div class="form-group" style="margin-top: 14px;">
-          <label class="form-label" for="input-desc">职能描述与设定</label>
-          <input type="text" id="input-desc" class="form-control" placeholder="例：负责商品咨询、节点导购与 7x24 小时答疑">
-        </div>
-
-        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px;">
-          <button type="button" class="btn-icon" style="width: auto; padding: 0 16px; height: 38px;" onclick="closeModal()">取消</button>
-          <button type="submit" class="btn-primary">确认接入并上线</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script src="js/app.js"></script>
-  <!-- 引入悬浮客服组件用于预览 -->
-  <script src="js/widget.js" data-bot="yunding_preview"></script>
+  <noscript><strong>We're sorry but 雲頂天宮 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
+  <div id="app"></div>
 </body>
 </html>
