@@ -1,0 +1,18 @@
+services:
+  yunding-bot:
+    image: koishijs/koishi:latest
+    container_name: yundingtiangong-bot
+    restart: unless-stopped
+    ports:
+      - "5140:5140"
+    volumes:
+      - ./data:/koishi
+      - ./assets/logo.svg:/koishi/logo.svg:ro
+    environment:
+      - TZ=Asia/Shanghai
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:5140/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

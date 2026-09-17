@@ -1,0 +1,9 @@
+# 运行时动态数据目录
+data/
+*.log
+.env.local
+
+# 临时与缓存文件
+*.tmp
+.DS_Store
+Thumbs.db
