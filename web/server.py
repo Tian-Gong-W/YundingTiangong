@@ -46,6 +46,13 @@ class AppHandler(SimpleHTTPRequestHandler):
         parsed = urlparse(self.path)
         p = parsed.path
 
+        # 0. 静态资源路径前缀归一化（处理 SPA 相对路径请求如 /dialogue/js/...）
+        for prefix in ['/js/', '/css/', '/fonts/', '/img/', '/upload/', '/static/', '/config/', '/favicon.ico']:
+            if prefix in p and not p.startswith(prefix):
+                p = p[p.find(prefix):]
+                self.path = p
+                break
+
         # 1. API 响应处理
         if p == '/pro/index':
             return self._send_json(INDEX_DATA)
