@@ -19,11 +19,25 @@ BENEFITS_DATA = json.dumps({
     "status": 200,
     "message": "成功",
     "data": {
-        "vip_level": "SVIP 终身至尊版",
-        "tokens": "999,999,999",
-        "remain_days": "永久有效",
-        "nickname": "雲頂天宮",
-        "user_id": 88888
+        "id": 88888,
+        "username": "雲頂天宮",
+        "name": "雲頂天宮",
+        "company_name": "雲頂天宮",
+        "mobile": "18888888888",
+        "role_name": "超级管理员",
+        "is_admin": 1,
+        "level": "SVIP 至尊商业版",
+        "company_level_id": 4,
+        "electric_power": "999,999",
+        "end_at": "永久有效",
+        "api_key": "sk-yunding-master-tiangong-888888",
+        "describe": "雲頂天宮 · 全球多渠道智能机器人调度中枢",
+        "list": [
+            {"level": 1, "title": "基础版", "price": "0", "describe": "轻量体验"},
+            {"level": 2, "title": "专业版", "price": "99", "describe": "团队协作"},
+            {"level": 3, "title": "企业版", "price": "299", "describe": "多渠道矩阵"},
+            {"level": 4, "title": "SVIP 至尊版", "price": "永久", "describe": "终身独立集群"}
+        ]
     }
 }).encode('utf-8')
 
@@ -82,6 +96,14 @@ class AppHandler(SimpleHTTPRequestHandler):
     def do_POST(self):
         parsed = urlparse(self.path)
         p = parsed.path
+        if p == '/pro/debug_log':
+            length = int(self.headers.get('Content-Length', 0))
+            body = self.rfile.read(length).decode('utf-8', errors='ignore')
+            print(f"[CLIENT LOG] {body}", flush=True)
+            with open(os.path.join(BASE_DIR, 'debug.log'), 'a', encoding='utf-8') as f:
+                f.write(body + '\n')
+            return self._send_json(SUCCESS_RESP)
+
         if p == '/pro/app/install':
             return self._send_json(INSTALL_SUCCESS)
         return self._send_json(SUCCESS_RESP)
