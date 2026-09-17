@@ -82,6 +82,34 @@
   <link href="/css/app.251ba009.css" rel="stylesheet">
   <link href="/css/2154.c714e0fa.css" rel="stylesheet">
   <link href="/css/6681.fcc9a393.css" rel="stylesheet">
+
+  <style>
+    /* 屏蔽第三方二维码、客服悬浮气泡、推广邀约与升级弹窗 */
+    .float_kf,
+    .float_kf_mini,
+    .t-code-on,
+    .dialog-float-custom-service,
+    .code-dialog,
+    [class*="float_kf"],
+    img[src*="t-code"],
+    img[src*="ewm"],
+    img[alt="wechat"],
+    img[src*="wechat"],
+    .title-content,
+    .vdr[style*="z-index"],
+    .equity-btn,
+    .dialog-size-4,
+    .el-dialog__wrapper.dialog-float-custom-service {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      overflow: hidden !important;
+    }
+  </style>
+
 </head>
 <body>
   <noscript><strong>We're sorry but 雲頂天宮 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
